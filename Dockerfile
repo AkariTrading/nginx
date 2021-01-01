@@ -1,5 +1,7 @@
 FROM nginx:1.19.6-alpine
 
-WORKDIR /etc/nginx/
+WORKDIR /app
+
 COPY . .
-CMD ["nginx", "-g", "daemon off;"]
+
+CMD ["nginx", "-c", "nginx.conf", "-g", "daemon off;"]
