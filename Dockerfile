@@ -1,7 +1,5 @@
 FROM nginx:1.19.6-alpine
 
-WORKDIR /app
-
-COPY . /etc/nginx/
-
-CMD ["nginx"]
+WORKDIR /etc/nginx
+COPY . .
+CMD nginx
