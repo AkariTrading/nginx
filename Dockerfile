@@ -1,7 +1,6 @@
 FROM nginx:1.19.6-alpine
 
-WORKDIR /app
+RUN rm /etc/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY conf/nginx.conf /etc/nginx/nginx.conf
 
-COPY . .
-
-CMD ["nginx", "-c", "nginx.conf", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
